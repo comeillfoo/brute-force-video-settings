@@ -37,7 +37,27 @@ video_path="$1"
 vcodec="$2"
 
 case "${vcodec}" in
-    mp4|mov|avi|mkv|wmv)
+    dvvideo) # .dv
+        ;;
+    ffv1)    # .avi, .mkv, .mov
+        ;;
+    av1)     # .webm
+        ;;
+    h261)
+        ;;
+    h263)
+        ;;
+    h264)    # .mp4, .m4v
+        ;;
+    hevc)
+        ;;
+    mpeg1video)
+        ;;
+    mpeg2video)
+        ;;
+    mpeg4)   # .mp4
+        ;;
+    msmpeg4v1|msmpeg4v2|msmpeg4v3) # .mp4
         ;;
     *)
         echo "Unknown video codec '${vcodec}'" >&2
