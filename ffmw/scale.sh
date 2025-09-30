@@ -48,9 +48,12 @@ case "${resolution}" in
     720p)
         scale='1280x720'
         ;;
+    1080p)
+        scale='1920x1080'
+        ;;
     *)
         echo "Unknown resolution '${resolution}'" >&2
         exit 22 # EINVAL
         ;;
 esac
-ffmpeg -i "${video_path}" -s "${scale}" pipe:1
+ffmpeg -i "${video_path}" -s "${scale}" -f "${video_path##*.}" pipe:
