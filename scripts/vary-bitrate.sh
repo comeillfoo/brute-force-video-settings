@@ -10,17 +10,15 @@ if [ ! -d "${SOURCE_DIR}" ]; then
 fi
 
 # @brief path to folder to save videos to
-tempdir="$(mktemp -dt vary-vcodec.XXXXXX)"
+tempdir="$(mktemp -dt vary-bitrate.XXXXXX)"
 trap 'rm -rf -- "${tempdir}"' EXIT
 
 for src_vid in "${SOURCE_DIR}"/*; do
-    for vcodec_ext in 'h264.mp4' 'hevc.mp4' 'mpeg1video.mp4' 'mpeg2video.mp4' \
-            'mpeg4.mp4' 'msmpeg4v2.avi' 'msmpeg4v3.avi' 'wmv1.avi' \
-            'wmv2.avi'; do
-        vcodec="${vcodec_ext%%.*}"
+    ext="${src_vid##*.}"
+    for bitrate in '2M' '4M' '6M'; do
         dst_vid="${src_vid##*/}"
-        dst_vid="${tempdir}/${dst_vid%%.*}-${vcodec_ext}"
-        ffmpeg -i "${src_vid}" -c:v "${vcodec}" "${dst_vid}"
+        dst_vid="${tempdir}/${dst_vid%%.*}-${bitrate}.${ext}"
+        ffmpeg -i "${src_vid}" -b:v "${bitrate}" "${dst_vid}"
     done
 done
 rm "${SOURCE_DIR}"/*
