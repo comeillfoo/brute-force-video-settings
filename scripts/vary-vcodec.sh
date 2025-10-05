@@ -19,7 +19,7 @@ for src_vid in "${SOURCE_DIR}"/*; do
             'wmv2.avi'; do
         vcodec="${vcodec_ext%%.*}"
         dst_vid="${src_vid##*/}"
-        dst_vid="${tempdir}/${dst_vid%%.*}-${vcodec_ext}"
+        dst_vid="${tempdir}/${dst_vid}-${vcodec_ext}"
         ffmpeg -i "${src_vid}" -c:v "${vcodec}" "${dst_vid}"
     done
 done
