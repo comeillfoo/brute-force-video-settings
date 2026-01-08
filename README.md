@@ -6,8 +6,8 @@ system with Windows Embedded CE 6.0.
 
 ## Attempts
 
-| Cmd   | Outcome |
-| :---- | :------ |
-| `ffmpeg -i input.mp4 -vf "scale=-2:480" output.avi` | only sound |
-| `ffmpeg -i input.mp4 -vf "scale=-2:480" output.wmv` | skipped    |
-| `ffmpeg -i input.mp4 -vf "scale=640:480" -c:v mpeg4 -vtag xvid -r 25 -qscale:v 5 -qscale:a 5 output.avi` | ? |
+| Cmd   | Successful | Outcome |
+| :---- | :--------: | :------ |
+| `ffmpeg -i input.mp4 -vf "scale=-2:480" output.avi` | &#x274C; | only sound |
+| `ffmpeg -i input.mp4 -vf "scale=-2:480" output.wmv` | &#x274C; | corrupted    |
+| `ffmpeg -i input.mp4 -vf "scale=640:480" -c:v mpeg4 -vtag xvid -r 25 -qscale:v 5 -qscale:a 5 output.avi` | &#x2705; | flawless |
