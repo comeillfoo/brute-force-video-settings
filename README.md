@@ -22,6 +22,8 @@ AUTO PAL / NTSC / SECAM
 
 DVD / VCD / CD / MP3/ WMA / JPEG / MPEG4
 
+![dvm-3004g](assets/dmv-3004g.jpg)
+
 ## Encoding attempts
 
 | Cmd   | Successful | Outcome |
