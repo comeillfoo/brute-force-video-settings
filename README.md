@@ -2,9 +2,27 @@
 
 A bunch of wrappers around `ffmpeg` in order to facilitate brute forcing the
 video settings (video codec, format and resolution) for the old car multimedia
-system with Windows Embedded CE 6.0.
+system with Windows Embedded CE 6.0 (`DVM-3004` / `DVM-3004G`).
 
-## Attempts
+## DVM-3004G? info
+
+### System parameters
+
+#### Video systems:
+
+AUTO PAL / NTSC / SECAM
+
+#### Display resolution:
+
+800 x 480 pixels
+
+### DVD parameters
+
+### Supported disks:
+
+DVD / VCD / CD / MP3/ WMA / JPEG / MPEG4
+
+## Encoding attempts
 
 | Cmd   | Successful | Outcome |
 | :---- | :--------: | :------ |
